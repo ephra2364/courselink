@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>CourseLink</title>
+<meta name="description" content="Trouvez un livreur disponible à Lomé en quelques secondes.">
+<meta name="theme-color" content="#0f766e">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="CourseLink">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="net" class="net" hidden>Connexion internet perdue — les actions reprendront au retour du réseau.</div>
+<main id="app" aria-live="polite"><div class="boot"><div class="spin"></div></div></main>
+<div id="sheet" class="sheet" hidden><div class="sheet-bg" data-act="close"></div><div class="sheet-box" role="dialog" aria-modal="true"><div id="sheetBody"></div></div></div>
+<div id="toast" class="toast" hidden></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="config.js"></script>
+<script src="app.js"></script>
+<script>
+if ('serviceWorker' in navigator && location.protocol === 'https:') {
+  window.addEventListener('load', function () { navigator.serviceWorker.register('sw.js').catch(function () {}); });
+}
+</script>
+</body>
+</html>
