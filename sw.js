@@ -1,6 +1,6 @@
 // CourseLink — service worker : l'interface reste disponible hors ligne ;
 // les données (Supabase) ne sont jamais mises en cache ici.
-var CACHE = 'courselink-v1';
+var CACHE = 'courselink-v2';
 var SHELL = ['./', 'index.html', 'styles.css', 'app.js', 'config.js', 'manifest.webmanifest', 'icon.svg', 'icon-192.png'];
 self.addEventListener('install', function (e) {
   e.waitUntil(caches.open(CACHE).then(function (c) { return c.addAll(SHELL); }).then(function () { return self.skipWaiting(); }));
